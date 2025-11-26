@@ -15,8 +15,8 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class);
-            $table->timestamps();
             $table->string('content');
+            $table->timestamps();
         });
     }
 

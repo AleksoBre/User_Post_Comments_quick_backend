@@ -10,12 +10,15 @@ class Post extends Model
     /** @use HasFactory<\Database\Factories\PostFactory> */
     use HasFactory;
 
-    protected $fillable = ['content'];
+    protected $fillable = ['content', 'user_id'];
 
     public function user() {
         return $this->belongsTo(User::class);
     }
-    public function comment() {
-        return $this->hasMany(comment::class);
+    public function comments() {
+        return $this->hasMany(Comment::class);
+    }
+    public function tags() {
+        return $this->belongsToMany(Tag::class);
     }
 }

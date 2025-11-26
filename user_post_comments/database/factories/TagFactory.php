@@ -2,13 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Nette\Utils\Random;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Tag>
  */
-class PostFactory extends Factory
+class TagFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,13 +17,12 @@ class PostFactory extends Factory
      * @return array<string, mixed>
      */
 
-    protected $model = Post::class;
-    
+    protected $model = Tag::class;
+
     public function definition(): array
     {
         return [
-            'content' => 'post: ' . fake()->word(),
-            'user_id' => \App\Models\User::factory()
+
         ];
     }
 }
