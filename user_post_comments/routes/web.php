@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    dd('hello');
 });
 
 // Final goal
@@ -11,5 +11,13 @@ Route::get('/', function () {
 // 7 ruta
 
 //1. kreiram stranice
+// index, show, create, edit
+
+
+
+
+
+
+
 //2. dodam funkcionalnost
 //3. kreiram rute
