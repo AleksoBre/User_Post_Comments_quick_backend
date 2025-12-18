@@ -17,7 +17,7 @@ Route::get('/posts', function() {
 
 Route::get('/posts/{post}', function(Post $post) {
     return view('posts.show', ['post' => $post]);
-})
+});
 
 
 // forma za crud posta, forma za crud komentara
@@ -36,4 +36,4 @@ Route::get('/posts/{post}', function(Post $post) {
 
 
 //2. dodam funkcionalnost
-//3. kreiram rute
+// 3. kreiram rute
