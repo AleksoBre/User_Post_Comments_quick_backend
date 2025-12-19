@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Comment;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,10 +22,15 @@ class CommentFactory extends Factory
 
     public function definition(): array
     {
+
+
+        $user = User::inRandomOrder()->first() ?? User::factory()->create();
+        $post = Post::inRandomOrder()->first() ?? Post::factory()->create();
+
         return [
-            'content' => 'comment: ' . fake()->text(),
-            'user_id' => \App\Models\User::factory(),
-            'post_id' => \App\Models\Post::factory()
+            'content' => 'comment: ' . $this->faker->sentence(),
+            'user_id' => $user->id,
+            'post_id' => $post->id
         ];
     }
 }
