@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Comment;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -25,6 +26,10 @@ class DatabaseSeeder extends Seeder
         Post::factory()->create([
             'content' => 'Ja sam post cao ja sam post ja postim haha',
             'user_id' => User::factory()->create()
+        ]);
+
+        Comment::factory()->create([
+            
         ]);
     }
 }
