@@ -8,8 +8,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-// kreiram seedere sa realnim userima, postovima, komentarima
-
 
 // USERS
 Route::get('/users', function() {
@@ -47,17 +45,3 @@ Route::get('/posts/{post}/comments', function(Post $post) {
 // forma za crud posta, forma za crud komentara
 // 7 akcija (index, show, create, store, edit, update, delete)
 // stranice (index, show, create, edit)
-
-
-
-
-// 1. kreiram stranice
-// index, show, create, edit
-
-
-
-
-
-
-//2. dodam funkcionalnost
-// 3. kreiram rute
