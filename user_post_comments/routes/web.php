@@ -12,11 +12,16 @@ Route::get('/users', function() {
 });
 
 Route::get('/posts', function() {
-    return view('posts.index', ['posts' => Post::get()]);
+    return view('posts.index', ['posts' => Post::with('user')->latest()->paginate(5)]);
 });
 
 Route::get('/posts/{post}', function(Post $post) {
     return view('posts.show', ['post' => $post]);
+});
+
+Route::get('/posts/{post}/comments', function(Post $post) {
+
+    return view('comments.index', ['post' => $post]);
 });
 
 
