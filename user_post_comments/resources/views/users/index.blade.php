@@ -1,5 +1,12 @@
 <x-layout>
-    <x-slot:header>Users</x-slot>
+    <x-slot:header>
+        <div class="flex h-16 items-center justify-between">
+            Users
+            <a href="/users/create" class="hover:bg-gray-600 hover:text-white rounded-md px-3 py-2 text-xl bg-white/5 font-medium">
+                <div>Create a user</div>
+            </a>
+        </div>
+    </x-slot>
 
 
     <div class="space-y-4">

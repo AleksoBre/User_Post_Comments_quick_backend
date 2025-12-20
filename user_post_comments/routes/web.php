@@ -15,6 +15,15 @@ Route::get('/users', function() {
     return view('users.index', ['users' => $users]);
 });
 
+Route::get('/users/create', function() {
+    return view('users.create');
+});
+
+Route::put('users/create', function() {
+
+    // mozda je cak i post request umesto put
+});
+
 Route::get('/users/{user}', function(User $user) {
     $user->loadCount(['comments', 'posts']);
     $posts = $user->posts()->latest()->paginate(5);
@@ -28,7 +37,8 @@ Route::get('/posts', function() {
 });
 
 Route::get('/posts/{post}', function(Post $post) {
-    return view('posts.show', ['post' => $post]);
+    $post->load('user');
+    return view('posts.show', compact('post'));
 });
 
 
@@ -36,12 +46,13 @@ Route::get('/posts/{post}', function(Post $post) {
 Route::get('/posts/{post}/comments', function(Post $post) {
     $post->load('comments.user');
 
-    return view('comments.index', ['post' => $post]);
+    return view('comments.index', compact('post'));
 });
 
 
 
 
-// forma za crud posta, forma za crud komentara
+// crud za users, posts, comments
 // 7 akcija (index, show, create, store, edit, update, delete)
+// METODE FORME (GET, POST, PUT, PATCH, DELETE)
 // stranice (index, show, create, edit)

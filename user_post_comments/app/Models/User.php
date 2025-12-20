@@ -11,7 +11,7 @@ class User extends Model
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory;
 
-    protected $fillable = ['username'];
+    protected $fillable = ['username', 'email'];
 
     public function posts() {
         return $this->hasMany(Post::class);
