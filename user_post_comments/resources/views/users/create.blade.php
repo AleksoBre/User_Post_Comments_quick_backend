@@ -4,7 +4,6 @@
 
 
 <form action="/users/create" method="POST">
-    @method('PUT')
     @csrf
     <div class="border-b border-white/10 pb-12">
       <h2 class="text-base/7 font-semibold text-white">Profile</h2>
