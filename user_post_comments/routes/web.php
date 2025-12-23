@@ -15,6 +15,7 @@ Route::resource('posts.comments', PostCommentController::class)->only(['index'])
 Route::resource('users', UserController::class);
 
 
+//odradim filtraciju objava i usera
 
 // crud za users, posts, comments
 // METODE FORME (GET, POST, PUT, PATCH, DELETE)

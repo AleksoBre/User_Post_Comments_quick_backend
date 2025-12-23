@@ -55,7 +55,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -63,7 +63,11 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $validated = $request->validate(['username' => 'min:3']);
+
+        $user->update($validated);
+
+        return redirect('/users/' . $user->id);
     }
 
     /**
